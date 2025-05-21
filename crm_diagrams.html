@@ -137,3 +137,64 @@
                 }
             }
         });
+
+        
+// Histogram (Bar Chart)
+        const histogramCtx = document.getElementById('histogramChart').getContext('2d');
+        new Chart(histogramCtx, {
+            type: 'bar',
+            data: {
+                labels: [2022, 2023, 2024],
+                datasets: [{
+                    label: 'Кількість клієнтів',
+                    data: [15, 25, 26],
+                    backgroundColor: '#00b7eb',
+                    borderColor: '#0088b3',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Кількість клієнтів', color: '#fff' },
+                        ticks: { color: '#fff' },
+                        grid: { color: '#444' }
+                    },
+                    x: {
+                        title: { display: true, text: 'Рік', color: '#fff' },
+                        ticks: { color: '#fff' },
+                        grid: { color: '#444' }
+                    }
+                },
+                plugins: {
+                    legend: { labels: { color: '#fff' } }
+                }
+            }
+        });
+
+        // Pie Chart
+        const pieCtx = document.getElementById('pieChart').getContext('2d');
+        new Chart(pieCtx, {
+            type: 'pie',
+            data: {
+                labels: [2022, 2023, 2024],
+                datasets: [{
+                    label: 'Розподіл клієнтів',
+                    data: [15, 25, 26],
+                    backgroundColor: ['#00e5ff', '#00b7eb', '#0088b3'],
+                    borderColor: '#000',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { labels: { color: '#fff' } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
