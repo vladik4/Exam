@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адмін-панель Системи CRM</title>
+    <link rel="stylesheet" href="admin_styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Системи CRM</div>
+        <nav>
+            <ul>
+                <li><a href="#dashboard">Панель керування</a></li>
+                <li><a href="#content">Контент</a></li>
+                <li><a href="#users">Користувачі</a></li>
+                <li><a href="#events">Події</a></li>
+                <li><a href="#analytics">Аналітика</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <section class="hero">
+        <h1>Адмін-панель Системи CRM</h1>
+        <p>Керуйте контентом, користувачами та подіями ефективно</p>
+    </section>
+
+    <main>
+        <section id="content" class="section">
+            <h2>Керування контентом</h2>
+            <form id="add-product">
+                <label for="product-name">Назва продукту:</label>
+                <input type="text" id="product-name" name="product-name" required>
+                <label for="product-year">Рік випуску:</label>
+                <input type="number" id="product-year" name="product-year" required>
+                <label for="product-desc">Опис:</label>
+                <textarea id="product-desc" name="product-desc" required></textarea>
+                <label for="visibility">Видимий:</label>
+                <input type="checkbox" id="visibility" name="visibility">
+                <button type="submit">Додати продукт</button>
+            </form>
+            <div id="confirmation" class="hidden">Продукт додано!</div>
+        </section>
+
+        <section id="users" class="section">
+            <h2>Керування користувачами</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Коментар</th>
+                        <th>Дія</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Чудовий продукт!</td>
+                        <td>
+                            <button class="approve">Схвалити</button>
+                            <button class="delete">Видалити</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="events" class="section">
+            <h2>Керування подіями</h2>
+            <form id="add-event">
+                <label for="event-name">Назва події:</label>
+                <input type="text" id="event-name" name="event-name" required>
+                <button type="submit">Анонсувати подію</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Системи CRM. Усі права захищено.</p>
+        <a href="mailto:support@crmsystems.com">Технічна підтримка</a>
+    </footer>
+
+    <script>
+        document.getElementById('add-product').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('confirmation').classList.remove('hidden');
+            setTimeout(() => document.getElementById('confirmation').classList.add('hidden'), 3000);
+        });
+    </script>
+</body>
+</html>
